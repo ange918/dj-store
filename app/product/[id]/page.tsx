@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { motion } from "motion/react";
 import Link from "next/link";
-import heroImage from "../../attached_assets/generated_images/premium_fashion_lifestyle_hero_image.png";
+import heroImage from "../../../attached_assets/generated_images/premium_fashion_lifestyle_hero_image.png";
 
 const StarRating = ({ rating }: { rating: number }) => (
   <div className="flex gap-1 text-[#FFC633] text-sm">
