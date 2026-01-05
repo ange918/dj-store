@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
+import Link from "next/link";
 import heroImage from "../attached_assets/generated_images/premium_fashion_lifestyle_hero_image.png";
 import product1 from "../attached_assets/stock_images/black_premium_cotton_da61702b.jpg";
 import product2 from "../attached_assets/stock_images/premium_skinny_fit_b_c806a6ca.jpg";
@@ -52,31 +53,33 @@ const ProductCard = ({
   image: any;
   discount?: string;
 }) => (
-  <motion.div 
-    initial={{ opacity: 0, y: 10 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    className="group cursor-pointer"
-  >
-    <div className="relative aspect-square overflow-hidden rounded-sm bg-[#F0EEED] p-4 transition-all duration-500">
-      <Image
-        src={image}
-        alt={name}
-        fill
-        className="object-contain transition-transform duration-700 group-hover:scale-105"
-      />
-    </div>
-    <div className="mt-4 space-y-1">
-      <h3 className="text-xs font-medium tracking-[0.2em] uppercase text-black/80">{name}</h3>
-      <StarRating rating={rating} />
-      <div className="flex items-center gap-3">
-        <span className="text-sm font-bold tracking-tighter">${price}</span>
-        {originalPrice && (
-          <span className="text-xs text-black/20 line-through">${originalPrice}</span>
-        )}
+  <Link href={`/product/1`}>
+    <motion.div 
+      initial={{ opacity: 0, y: 10 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="group cursor-pointer"
+    >
+      <div className="relative aspect-square overflow-hidden rounded-sm bg-[#F0EEED] p-4 transition-all duration-500">
+        <Image
+          src={image}
+          alt={name}
+          fill
+          className="object-contain transition-transform duration-700 group-hover:scale-105"
+        />
       </div>
-    </div>
-  </motion.div>
+      <div className="mt-4 space-y-1">
+        <h3 className="text-xs font-medium tracking-[0.2em] uppercase text-black/80">{name}</h3>
+        <StarRating rating={rating} />
+        <div className="flex items-center gap-3">
+          <span className="text-sm font-bold tracking-tighter">${price}</span>
+          {originalPrice && (
+            <span className="text-xs text-black/20 line-through">${originalPrice}</span>
+          )}
+        </div>
+      </div>
+    </motion.div>
+  </Link>
 );
 
 const WordFlip = () => {
