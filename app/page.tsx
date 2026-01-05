@@ -141,22 +141,32 @@ const WordFlip = () => {
   );
 };
 
+import Marquee from "react-fast-marquee";
+
 const TestimonialCard = ({ name, comment }: { name: string; comment: string }) => (
-  <div className="rounded-2xl border border-black/5 p-6 space-y-4 bg-white">
-    <div className="flex gap-1 text-[#FFC633]">
+  <div className="mx-4 w-[300px] rounded-2xl border border-black/5 p-6 space-y-4 bg-white hover:border-black/20 transition-all duration-300">
+    <div className="flex gap-1 text-[#FFC633] text-xs">
       {[...Array(5)].map((_, i) => <span key={i}>★</span>)}
     </div>
     <div className="flex items-center gap-2">
-      <span className="text-sm font-bold tracking-tight">{name}</span>
+      <span className="text-sm font-bold uppercase tracking-tight">{name}</span>
       <span className="flex h-4 w-4 items-center justify-center rounded-full bg-green-500 text-[8px] text-white">✓</span>
     </div>
-    <p className="text-[11px] leading-relaxed text-black/60 italic uppercase tracking-wider line-clamp-4">
+    <p className="text-[11px] leading-relaxed text-black/60 uppercase tracking-wider">
       "{comment}"
     </p>
   </div>
 );
 
 export default function Home() {
+  const testimonials = [
+    { name: "Sarah M.", comment: "I'm blown away by the quality and style of the clothes I received from SHOP.CO. From casual wear to elegant dresses, every piece I've bought has exceeded my expectations." },
+    { name: "Alex K.", comment: "Finding clothes that align with my personal style used to be a challenge until I discovered SHOP.CO. The range of options they offer is truly remarkable, catering to a variety of tastes and occasions." },
+    { name: "James L.", comment: "As someone who's always on the lookout for unique fashion pieces, I'm thrilled to have stumbled upon SHOP.CO. The selection of clothes is not only diverse but also on-point with the latest trends." },
+    { name: "Mila T.", comment: "The attention to detail and the minimalist aesthetic are exactly what I was looking for. Highly recommend for anyone who values quality over quantity." },
+    { name: "David R.", comment: "Fast shipping and impeccable packaging. The product quality is top-notch. Will definitely be a returning customer." },
+  ];
+
   return (
     <div className="min-h-screen bg-white selection:bg-black selection:text-white">
       <main>
@@ -371,21 +381,16 @@ export default function Home() {
         </section>
 
         {/* Testimonials */}
-        <section className="py-20 lg:py-32 overflow-hidden">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between mb-16">
-              <h2 className="text-3xl font-black lg:text-4xl font-display tracking-tight">OUR HAPPY CUSTOMERS</h2>
-              <div className="flex gap-4">
-                <button className="p-2 hover:bg-black/5 rounded-full border border-black/5 transition-colors">←</button>
-                <button className="p-2 hover:bg-black/5 rounded-full border border-black/5 transition-colors">→</button>
-              </div>
-            </div>
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
-              <TestimonialCard name="Sarah M." comment="I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I've bought has exceeded my expectations." />
-              <TestimonialCard name="Alex K." comment="Finding clothes that align with my personal style used to be a challenge until I discovered Shop.co. The range of options they offer is truly remarkable, catering to a variety of tastes and occasions." />
-              <TestimonialCard name="James L." comment="As someone who's always on the lookout for unique fashion pieces, I'm thrilled to have stumbled upon Shop.co. The selection of clothes is not only diverse but also on-point with the latest trends." />
-            </div>
+        <section className="py-20 lg:py-32 overflow-hidden bg-white">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mb-16">
+            <h2 className="text-3xl font-black lg:text-4xl font-display tracking-tight uppercase">OUR HAPPY CUSTOMERS</h2>
           </div>
+          
+          <Marquee gradient={false} speed={40} pauseOnHover={true}>
+            {testimonials.map((t, i) => (
+              <TestimonialCard key={i} {...t} />
+            ))}
+          </Marquee>
         </section>
       </main>
     </div>
