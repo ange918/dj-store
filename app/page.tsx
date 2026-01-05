@@ -1,13 +1,13 @@
 import Image from "next/image";
-import heroImage from "@assets/generated_images/premium_fashion_lifestyle_hero_image.png";
-import product1 from "@assets/stock_images/black_premium_cotton_da61702b.jpg";
-import product2 from "@assets/stock_images/premium_skinny_fit_b_c806a6ca.jpg";
-import product3 from "@assets/stock_images/classic_checkered_bu_a1e0026b.jpg";
-import product4 from "@assets/stock_images/orange_and_black_str_76d5db2d.jpg";
-import product5 from "@assets/stock_images/professional_photo_o_9d22acf2.jpg";
-import product6 from "@assets/stock_images/orange_t-shirt_with__09aee960.jpg";
-import product7 from "@assets/stock_images/denim_shorts_for_men_f15ace7f.jpg";
-import product8 from "@assets/stock_images/black_skinny_jeans_o_cacd5e43.jpg";
+import heroImage from "../attached_assets/generated_images/premium_fashion_lifestyle_hero_image.png";
+import product1 from "../attached_assets/stock_images/black_premium_cotton_da61702b.jpg";
+import product2 from "../attached_assets/stock_images/premium_skinny_fit_b_c806a6ca.jpg";
+import product3 from "../attached_assets/stock_images/classic_checkered_bu_a1e0026b.jpg";
+import product4 from "../attached_assets/stock_images/orange_and_black_str_76d5db2d.jpg";
+import product5 from "../attached_assets/stock_images/professional_photo_o_9d22acf2.jpg";
+import product6 from "../attached_assets/stock_images/orange_t-shirt_with__09aee960.jpg";
+import product7 from "../attached_assets/stock_images/denim_shorts_for_men_f15ace7f.jpg";
+import product8 from "../attached_assets/stock_images/black_skinny_jeans_o_cacd5e43.jpg";
 
 const StarRating = ({ rating }: { rating: number }) => (
   <div className="stars">
