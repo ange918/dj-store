@@ -1,0 +1,87 @@
+Crée une landing page e-commerce moderne et premium pour la vente de vêtements, en respectant strictement les spécifications suivantes.
+Technologies
+HTML5
+CSS moderne (ou Tailwind CSS si disponible)
+JavaScript léger si nécessaire
+Design responsive (mobile, tablette, desktop)
+STYLE GLOBAL
+Fond principal : blanc (#FFFFFF)
+Couleur principale : noir profond (#000000)
+Couleurs secondaires : gris clair et gris foncé
+Style : minimaliste, élégant, premium
+Typographie : sans-serif moderne
+Titres en majuscule, très bold
+HEADER
+Fond blanc
+À gauche :
+Icône menu burger (mobile)
+Logo texte : SHOP.CO (noir, bold)
+Menu horizontal :
+Shop
+On Sale
+New Arrivals
+Brands
+Barre de recherche arrondie avec icône loupe
+À droite :
+Icône panier
+Icône compte utilisateur
+HERO SECTION
+Layout en deux colonnes
+Colonne gauche :
+Titre principal très bold :
+Copier le code
+
+FIND CLOTHES
+THAT MATCHES
+YOUR STYLE
+Texte descriptif court, gris foncé
+Bouton CTA noir : Shop Now (texte blanc, arrondi)
+Statistiques alignées horizontalement :
+200+ International Brands
+2,000+ High-Quality Products
+30,000+ Happy Customers
+Colonne droite :
+Image lifestyle (homme et femme en tenue mode)
+Éléments décoratifs type étoiles/sparkles noirs
+BANDEAU MARQUES
+Fond noir
+Logos en blanc :
+Versace
+Zara
+Gucci
+Prada
+Calvin Klein
+Alignement horizontal centré
+SECTION "NEW ARRIVALS"
+Titre centré en majuscule
+Grille de 4 cartes produits
+Chaque carte contient :
+Image produit
+Nom du produit
+Étoiles de notation
+Prix
+Ancien prix barré si promotion
+Badge de réduction (ex : -30%)
+Bouton centré : View All
+Produits :
+T-shirt with Tape Details – $120
+Skinny Fit Jeans – $240 (ancien $260)
+Checkered Shirt – $180
+Sleeve Striped T-shirt – $130 (ancien $160)
+SECTION "TOP SELLING"
+Même structure que "New Arrivals"
+Produits :
+Vertical Striped Shirt – $212 (ancien $232)
+Courage Graphic T-shirt – $145
+Loose Fit Bermuda Shorts – $80
+Faded Skinny Jeans – $210
+SECTION SUIVANTE
+Titre : BROWSE BY DRESS STYLE
+Prévue pour navigation par catégories
+CONTRAINTES IMPORTANTES
+Respecter strictement la hiérarchie visuelle
+Design propre, espacé, professionnel
+Aucune librairie inutile
+Code clair et bien structuré
+Responsive mobile prioritaire
+Le rendu final doit être très proche d’une maquette Figma e-commerce premium.

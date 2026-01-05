@@ -1,65 +1,233 @@
 import Image from "next/image";
+import heroImage from "@assets/generated_images/premium_fashion_lifestyle_hero_image.png";
+import product1 from "@assets/stock_images/black_premium_cotton_da61702b.jpg";
+import product2 from "@assets/stock_images/premium_skinny_fit_b_c806a6ca.jpg";
+import product3 from "@assets/stock_images/classic_checkered_bu_a1e0026b.jpg";
+import product4 from "@assets/stock_images/orange_and_black_str_76d5db2d.jpg";
+import product5 from "@assets/stock_images/professional_photo_o_9d22acf2.jpg";
+import product6 from "@assets/stock_images/orange_t-shirt_with__09aee960.jpg";
+import product7 from "@assets/stock_images/denim_shorts_for_men_f15ace7f.jpg";
+import product8 from "@assets/stock_images/black_skinny_jeans_o_cacd5e43.jpg";
+
+const StarRating = ({ rating }: { rating: number }) => (
+  <div className="stars">
+    {[...Array(5)].map((_, i) => (
+      <span key={i} className={i < Math.floor(rating) ? "text-[#FFC633]" : "text-gray-300"}>
+        ★
+      </span>
+    ))}
+    <span className="ml-2 text-sm text-gray-500">{rating}/5</span>
+  </div>
+);
+
+const ProductCard = ({ 
+  name, 
+  price, 
+  originalPrice, 
+  rating, 
+  image, 
+  discount 
+}: { 
+  name: string; 
+  price: number; 
+  originalPrice?: number; 
+  rating: number; 
+  image: any;
+  discount?: string;
+}) => (
+  <div className="group cursor-pointer">
+    <div className="relative aspect-square overflow-hidden rounded-2xl bg-[#F0EEED] p-4">
+      <Image
+        src={image}
+        alt={name}
+        fill
+        className="object-contain transition-transform group-hover:scale-105"
+      />
+    </div>
+    <div className="mt-4 space-y-2">
+      <h3 className="text-lg font-bold truncate">{name}</h3>
+      <StarRating rating={rating} />
+      <div className="flex items-center gap-3">
+        <span className="text-2xl font-bold">${price}</span>
+        {originalPrice && (
+          <>
+            <span className="text-2xl font-bold text-black/40 line-through">${originalPrice}</span>
+            <span className="rounded-full bg-red-100 px-3 py-1 text-sm font-medium text-red-500">
+              {discount}
+            </span>
+          </>
+        )}
+      </div>
+    </div>
+  </div>
+);
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="min-h-screen bg-white">
+      {/* Header */}
+      <header className="sticky top-0 z-50 border-b bg-white">
+        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-4 lg:gap-10">
+            <button className="lg:hidden">
+              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+            <span className="text-3xl font-black">SHOP.CO</span>
+            <nav className="hidden lg:flex lg:items-center lg:gap-8 text-base">
+              <a href="#" className="hover:text-black/60">Shop</a>
+              <a href="#" className="hover:text-black/60">On Sale</a>
+              <a href="#" className="hover:text-black/60">New Arrivals</a>
+              <a href="#" className="hover:text-black/60">Brands</a>
+            </nav>
+          </div>
+          
+          <div className="flex flex-1 items-center justify-end gap-4 lg:gap-8">
+            <div className="hidden w-full max-w-md lg:block">
+              <div className="relative">
+                <span className="absolute inset-y-0 left-0 flex items-center pl-4 text-black/40">
+                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                  </svg>
+                </span>
+                <input
+                  type="text"
+                  placeholder="Search for products..."
+                  className="w-full rounded-full bg-[#F0F0F0] py-3 pl-12 pr-4 outline-none placeholder:text-black/40"
+                />
+              </div>
+            </div>
+            <div className="flex items-center gap-4">
+              <button className="p-2"><svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg></button>
+              <button className="p-2"><svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg></button>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+      </header>
+
+      <main>
+        {/* Hero Section */}
+        <section className="bg-[#F2F0F1] pt-10 lg:pt-0">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:flex lg:items-center lg:px-8">
+            <div className="py-12 lg:w-1/2 lg:py-24">
+              <h1 className="text-4xl font-black leading-tight sm:text-6xl lg:text-7xl">
+                FIND CLOTHES<br />THAT MATCHES<br />YOUR STYLE
+              </h1>
+              <p className="mt-8 text-base text-black/60 sm:text-lg max-w-lg">
+                Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.
+              </p>
+              <button className="mt-10 w-full rounded-full bg-black py-4 px-12 text-lg font-medium text-white sm:w-auto hover:bg-black/80 transition-colors">
+                Shop Now
+              </button>
+              <div className="mt-12 flex flex-wrap gap-8 lg:gap-12">
+                <div><p className="text-2xl font-bold sm:text-4xl">200+</p><p className="text-sm text-black/60 sm:text-base">International Brands</p></div>
+                <div className="h-12 w-px bg-black/10 hidden sm:block"></div>
+                <div><p className="text-2xl font-bold sm:text-4xl">2,000+</p><p className="text-sm text-black/60 sm:text-base">High-Quality Products</p></div>
+                <div className="h-12 w-px bg-black/10 hidden sm:block"></div>
+                <div><p className="text-2xl font-bold sm:text-4xl">30,000+</p><p className="text-sm text-black/60 sm:text-base">Happy Customers</p></div>
+              </div>
+            </div>
+            <div className="relative lg:w-1/2">
+              <div className="relative h-[400px] w-full sm:h-[600px] lg:h-[700px]">
+                <Image
+                  src={heroImage}
+                  alt="Premium Fashion"
+                  fill
+                  className="object-cover lg:object-contain"
+                  priority
+                />
+                {/* Decorative sparkles */}
+                <div className="absolute top-20 right-10 animate-pulse text-4xl">✦</div>
+                <div className="absolute bottom-40 left-10 animate-pulse text-2xl">✦</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Brands Banner */}
+        <section className="bg-black py-10">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-wrap items-center justify-center gap-8 text-2xl font-bold text-white sm:gap-16 sm:text-3xl">
+              <span className="tracking-widest">VERSACE</span>
+              <span className="tracking-tighter">ZARA</span>
+              <span className="tracking-tight">GUCCI</span>
+              <span className="font-serif italic">PRADA</span>
+              <span className="font-light">Calvin Klein</span>
+            </div>
+          </div>
+        </section>
+
+        {/* New Arrivals */}
+        <section className="py-16 lg:py-24">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <h2 className="mb-12 text-center text-4xl font-black lg:text-5xl">NEW ARRIVALS</h2>
+            <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+              <ProductCard name="T-shirt with Tape Details" price={120} rating={4.5} image={product1} />
+              <ProductCard name="Skinny Fit Jeans" price={240} originalPrice={260} rating={3.5} image={product2} discount="-20%" />
+              <ProductCard name="Checkered Shirt" price={180} rating={4.5} image={product3} />
+              <ProductCard name="Sleeve Striped T-shirt" price={130} originalPrice={160} rating={4.5} image={product4} discount="-30%" />
+            </div>
+            <div className="mt-12 text-center">
+              <button className="rounded-full border border-black/10 px-16 py-4 font-medium transition-colors hover:bg-black hover:text-white">
+                View All
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <hr className="mx-auto max-w-7xl border-black/10" />
+
+        {/* Top Selling */}
+        <section className="py-16 lg:py-24">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <h2 className="mb-12 text-center text-4xl font-black lg:text-5xl">TOP SELLING</h2>
+            <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+              <ProductCard name="Vertical Striped Shirt" price={212} originalPrice={232} rating={5.0} image={product5} discount="-20%" />
+              <ProductCard name="Courage Graphic T-shirt" price={145} rating={4.0} image={product6} />
+              <ProductCard name="Loose Fit Bermuda Shorts" price={80} rating={3.0} image={product7} />
+              <ProductCard name="Faded Skinny Jeans" price={210} rating={4.5} image={product8} />
+            </div>
+            <div className="mt-12 text-center">
+              <button className="rounded-full border border-black/10 px-16 py-4 font-medium transition-colors hover:bg-black hover:text-white">
+                View All
+              </button>
+            </div>
+          </div>
+        </section>
+
+        {/* Style Categories Section */}
+        <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+          <div className="rounded-[40px] bg-[#F0F0F0] px-6 py-16 lg:px-16">
+            <h2 className="mb-12 text-center text-4xl font-black lg:text-5xl">BROWSE BY DRESS STYLE</h2>
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
+              <div className="group relative overflow-hidden rounded-2xl bg-white p-6 sm:col-span-1">
+                <span className="text-2xl font-bold">Casual</span>
+                <div className="h-64 mt-4 bg-zinc-100 rounded-xl"></div>
+              </div>
+              <div className="group relative overflow-hidden rounded-2xl bg-white p-6 sm:col-span-2">
+                <span className="text-2xl font-bold">Formal</span>
+                <div className="h-64 mt-4 bg-zinc-100 rounded-xl"></div>
+              </div>
+              <div className="group relative overflow-hidden rounded-2xl bg-white p-6 sm:col-span-2">
+                <span className="text-2xl font-bold">Party</span>
+                <div className="h-64 mt-4 bg-zinc-100 rounded-xl"></div>
+              </div>
+              <div className="group relative overflow-hidden rounded-2xl bg-white p-6 sm:col-span-1">
+                <span className="text-2xl font-bold">Gym</span>
+                <div className="h-64 mt-4 bg-zinc-100 rounded-xl"></div>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
+
+      {/* Footer Placeholder */}
+      <footer className="bg-[#F0F0F0] pt-24 pb-12">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center text-black/60">
+          <p>© 2026 SHOP.CO. All Rights Reserved.</p>
+        </div>
+      </footer>
     </div>
   );
 }
