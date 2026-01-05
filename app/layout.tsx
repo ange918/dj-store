@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "djangoun.co",
+  title: "djangoun",
   description: "Premium Minimalist Fashion",
 };
 

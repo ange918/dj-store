@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a Next.js e-commerce landing page for a modern, premium clothing store called "SHOP.CO". The project is built with Next.js 16, React 19, TypeScript, and Tailwind CSS v4. It features a minimalist, elegant design with a focus on fashion retail, including product listings, hero sections, and brand showcases.
+This is a Next.js e-commerce landing page for a modern, premium clothing store called "djangoun". The project is built with Next.js 16, React 19, TypeScript, and Tailwind CSS v4. It features a minimalist, elegant design with a focus on fashion retail, including product listings, hero sections, and brand showcases.
 
 ## User Preferences
 

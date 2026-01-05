@@ -252,7 +252,7 @@ export default function Home() {
                 </h2>
                 <div className="space-y-6">
                   <p className="text-[11px] uppercase tracking-[0.2em] leading-relaxed text-black/50">
-                    At djangoun.co, we believe that true style is found in simplicity. Our journey began with a single mission: to create a curated collection of essentials that transcend seasons and trends.
+                    At djangoun, we believe that true style is found in simplicity. Our journey began with a single mission: to create a curated collection of essentials that transcend seasons and trends.
                   </p>
                   <p className="text-[11px] uppercase tracking-[0.2em] leading-relaxed text-black/50">
                     Each piece is a testament to our commitment to quality, featuring premium fabrics and meticulous construction. We don't just sell clothes; we provide the building blocks for a modern, sophisticated wardrobe.

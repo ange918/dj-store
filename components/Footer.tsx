@@ -25,7 +25,7 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-4 pt-24 pb-12 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-20">
           <div className="lg:col-span-4 space-y-6">
-            <span className="text-3xl font-black font-display tracking-tighter">djangoun.co</span>
+            <span className="text-3xl font-black font-display tracking-tighter">djangoun</span>
             <p className="text-[11px] leading-relaxed text-black/60 uppercase tracking-widest">
               We have clothes that suits your style and which you're proud to wear. From women to men.
             </p>
@@ -61,7 +61,7 @@ export default function Footer() {
         <hr className="my-12 border-black/5" />
 
         <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
-          <p className="text-[9px] uppercase tracking-[0.4em] text-black/40">© 2000-2026 djangoun.co, All Rights Reserved</p>
+          <p className="text-[9px] uppercase tracking-[0.4em] text-black/40">© 2000-2026 djangoun, All Rights Reserved</p>
           <div className="flex gap-3 opacity-40">
             <span className="px-2 py-1 border border-black/10 rounded-sm text-[8px] font-bold">VISA</span>
             <span className="px-2 py-1 border border-black/10 rounded-sm text-[8px] font-bold">MC</span>

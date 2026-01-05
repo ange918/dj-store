@@ -31,7 +31,7 @@ export default function Header() {
               </svg>
             </button>
             <a href="/" className="text-xl font-black font-display tracking-tighter hover:opacity-70 transition-opacity">
-              djangoun.co
+              djangoun
             </a>
             <nav className="hidden lg:flex lg:items-center lg:gap-10">
               {navLinks.map((link) => (
