@@ -174,10 +174,10 @@ export default function ShopPage() {
                           className="object-contain transition-transform duration-700 group-hover:scale-105"
                         />
                         {/* Quick Add Overlay */}
-                        <div className="absolute inset-x-4 bottom-4 translate-y-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                        <div className="absolute inset-x-2 bottom-2 sm:inset-x-4 sm:bottom-4 translate-y-2 sm:translate-y-4 opacity-100 sm:opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
                           <button 
                             onClick={handleQuickAdd}
-                            className="w-full rounded-full bg-black py-3 text-[9px] font-bold uppercase tracking-[0.2em] text-white hover:bg-black/90 active:scale-95"
+                            className="w-full rounded-full bg-black py-2 sm:py-3 text-[8px] sm:text-[9px] font-bold uppercase tracking-[0.1em] sm:tracking-[0.2em] text-white hover:bg-black/90 active:scale-95"
                           >
                             Ajouter au panier
                           </button>
