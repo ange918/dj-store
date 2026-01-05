@@ -249,18 +249,18 @@ export default function Home() {
                 </motion.div>
               </div>
             </div>
-            <div className="relative lg:w-1/3">
+            <div className="relative lg:w-1/3 self-stretch min-h-[500px] lg:min-h-0">
               <motion.div 
-                initial={{ opacity: 0, scale: 1.1 }}
+                initial={{ opacity: 0, scale: 1.05 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 1.5, ease: [0.19, 1, 0.22, 1] }}
-                className="relative h-[450px] w-full sm:h-[650px] lg:h-[800px] transition-all duration-1000"
+                className="absolute inset-0 transition-all duration-1000"
               >
                 <Image
                   src={heroImage}
                   alt="Premium Fashion"
                   fill
-                  className="object-cover lg:object-contain"
+                  className="object-cover object-center lg:object-right"
                   priority
                 />
                 <motion.div 
