@@ -307,6 +307,11 @@ export default function Home() {
               <ProductCard name="Checkered Shirt" price={180} rating={4.5} image={product3} />
               <ProductCard name="Sleeve Striped T" price={130} originalPrice={160} rating={4.5} image={product4} />
             </div>
+            <div className="mt-16 flex justify-center">
+              <button className="rounded-full border border-black/10 px-16 py-4 text-[10px] uppercase tracking-[0.4em] font-bold text-black hover:bg-black hover:text-white transition-all">
+                View All
+              </button>
+            </div>
           </div>
         </section>
 
@@ -326,6 +331,11 @@ export default function Home() {
               <ProductCard name="Courage Graphic" price={145} rating={4.0} image={product6} />
               <ProductCard name="Bermuda Shorts" price={80} rating={3.0} image={product7} />
               <ProductCard name="Faded Skinny" price={210} rating={4.5} image={product8} />
+            </div>
+            <div className="mt-16 flex justify-center">
+              <button className="rounded-full border border-black/10 px-16 py-4 text-[10px] uppercase tracking-[0.4em] font-bold text-black hover:bg-black hover:text-white transition-all">
+                View All
+              </button>
             </div>
           </div>
         </section>
