@@ -1,10 +1,32 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Satoshi', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Integrale CF', ui-sans-serif, system-ui, sans-serif;
   --color-brand-black: #000000;
   --color-brand-gray-dark: #666666;
   --color-brand-gray-light: #F0F0F0;
+}
+
+@font-face {
+  font-family: 'Integrale CF';
+  src: url('https://fonts.cdnfonts.com/s/77402/IntegraleCF-Bold.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('https://fonts.cdnfonts.com/s/73916/Satoshi-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('https://fonts.cdnfonts.com/s/73916/Satoshi-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
 }
 
 :root {
@@ -21,6 +43,7 @@ body {
 }
 
 h1, h2, h3, h4 {
+  font-family: var(--font-display);
   font-weight: 800;
   text-transform: uppercase;
 }
