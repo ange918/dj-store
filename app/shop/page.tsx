@@ -6,6 +6,7 @@ import Link from "next/link";
 import { motion } from "motion/react";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
+import { useCart } from "@/context/CartContext";
 
 import heroImage from "../../attached_assets/generated_images/premium_fashion_lifestyle_hero_image.png";
 import product1 from "../../attached_assets/stock_images/black_premium_cotton_da61702b.jpg";
@@ -141,38 +142,64 @@ export default function ShopPage() {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10 md:gap-x-8 md:gap-y-14">
-              {products.map((p, i) => (
-                <Link key={i} href="/product/1">
-                  <motion.div 
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="group cursor-pointer"
-                  >
-                    <div className="relative aspect-square overflow-hidden rounded-xl bg-[#F0EEED] p-4 transition-all duration-500">
-                      <Image
-                        src={p.image}
-                        alt={p.name}
-                        fill
-                        className="object-contain transition-transform duration-700 group-hover:scale-105"
-                      />
-                    </div>
-                    <div className="mt-4 space-y-1.5">
-                      <h3 className="text-[11px] font-bold tracking-widest uppercase truncate">{p.name}</h3>
-                      <StarRating rating={p.rating} />
-                      <div className="flex items-center gap-3">
-                        <span className="text-sm font-bold tracking-tighter">${p.price}</span>
-                        {p.originalPrice && (
-                          <div className="flex items-center gap-2">
-                            <span className="text-xs text-black/20 line-through">${p.originalPrice}</span>
-                            <span className="text-[9px] font-bold text-red-500 bg-red-50 px-2 py-0.5 rounded-full">-{Math.round((1 - p.price/p.originalPrice)*100)}%</span>
-                          </div>
-                        )}
+              {products.map((p, i) => {
+                const { addToCart } = useCart();
+                const handleQuickAdd = (e: React.MouseEvent) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  addToCart({
+                    id: `product-${p.name.toLowerCase().replace(/\s+/g, '-')}`,
+                    name: p.name,
+                    price: p.price,
+                    quantity: 1,
+                    image: p.image as any,
+                    size: "Large",
+                    color: "Black"
+                  });
+                };
+
+                return (
+                  <Link key={i} href="/product/1">
+                    <motion.div 
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      className="group cursor-pointer"
+                    >
+                      <div className="relative aspect-square overflow-hidden rounded-xl bg-[#F0EEED] p-4 transition-all duration-500">
+                        <Image
+                          src={p.image}
+                          alt={p.name}
+                          fill
+                          className="object-contain transition-transform duration-700 group-hover:scale-105"
+                        />
+                        {/* Quick Add Overlay */}
+                        <div className="absolute inset-x-4 bottom-4 translate-y-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                          <button 
+                            onClick={handleQuickAdd}
+                            className="w-full rounded-full bg-black py-3 text-[9px] font-bold uppercase tracking-[0.2em] text-white hover:bg-black/90 active:scale-95"
+                          >
+                            Ajouter au panier
+                          </button>
+                        </div>
                       </div>
-                    </div>
-                  </motion.div>
-                </Link>
-              ))}
+                      <div className="mt-4 space-y-1.5">
+                        <h3 className="text-[11px] font-bold tracking-widest uppercase truncate">{p.name}</h3>
+                        <StarRating rating={p.rating} />
+                        <div className="flex items-center gap-3">
+                          <span className="text-sm font-bold tracking-tighter">${p.price}</span>
+                          {p.originalPrice && (
+                            <div className="flex items-center gap-2">
+                              <span className="text-xs text-black/20 line-through">${p.originalPrice}</span>
+                              <span className="text-[9px] font-bold text-red-500 bg-red-50 px-2 py-0.5 rounded-full">-{Math.round((1 - p.price/p.originalPrice)*100)}%</span>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </motion.div>
+                  </Link>
+                );
+              })}
             </div>
 
             {/* Pagination */}

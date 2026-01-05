@@ -51,38 +51,66 @@ const ProductCard = ({
   rating: number; 
   image: any;
   discount?: string;
-}) => (
-  <Link href={`/product/1`}>
-    <motion.div 
-      initial={{ opacity: 0, y: 10 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      className="group cursor-pointer"
-    >
-      <div className="relative aspect-square overflow-hidden rounded-sm bg-[#F0EEED] p-4 transition-all duration-500">
-        <Image
-          src={image}
-          alt={name}
-          fill
-          className="object-contain transition-transform duration-700 group-hover:scale-105"
-        />
-      </div>
-      <div className="mt-4 space-y-1">
-        <h3 className="text-xs font-medium tracking-[0.2em] uppercase text-black/80">{name}</h3>
-        <StarRating rating={rating} />
-        <div className="flex items-center gap-3">
-          <span className="text-sm font-bold tracking-tighter">${price}</span>
-          {originalPrice && (
-            <span className="text-xs text-black/20 line-through">${originalPrice}</span>
-          )}
+}) => {
+  const { addToCart } = useCart();
+
+  const handleQuickAdd = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    addToCart({
+      id: `product-${name.toLowerCase().replace(/\s+/g, '-')}`,
+      name: name,
+      price: price,
+      quantity: 1,
+      image: image,
+      size: "Large",
+      color: "Black"
+    });
+  };
+
+  return (
+    <Link href={`/product/1`}>
+      <motion.div 
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="group cursor-pointer"
+      >
+        <div className="relative aspect-square overflow-hidden rounded-sm bg-[#F0EEED] p-4 transition-all duration-500">
+          <Image
+            src={image}
+            alt={name}
+            fill
+            className="object-contain transition-transform duration-700 group-hover:scale-105"
+          />
+          {/* Quick Add Overlay */}
+          <div className="absolute inset-x-4 bottom-4 translate-y-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+            <button 
+              onClick={handleQuickAdd}
+              className="w-full rounded-full bg-black py-3 text-[9px] font-bold uppercase tracking-[0.2em] text-white hover:bg-black/90 active:scale-95"
+            >
+              Ajouter au panier
+            </button>
+          </div>
         </div>
-      </div>
-    </motion.div>
-  </Link>
-);
+        <div className="mt-4 space-y-1">
+          <h3 className="text-xs font-medium tracking-[0.2em] uppercase text-black/80">{name}</h3>
+          <StarRating rating={rating} />
+          <div className="flex items-center gap-3">
+            <span className="text-sm font-bold tracking-tighter">${price}</span>
+            {originalPrice && (
+              <span className="text-xs text-black/20 line-through">${originalPrice}</span>
+            )}
+          </div>
+        </div>
+      </motion.div>
+    </Link>
+  );
+};
 
 import { useState, useEffect } from "react";
 import { AnimatePresence } from "motion/react";
+import { useCart } from "@/context/CartContext";
 
 const WordFlip = () => {
   const words = ["STYLE", "VIBE", "LOOK", "DREAM"];
