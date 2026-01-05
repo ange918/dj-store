@@ -221,9 +221,9 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="pt-4">
-                  <button className="rounded-full border border-black/10 px-12 py-4 text-[10px] uppercase tracking-[0.4em] font-bold text-black hover:bg-black hover:text-white transition-all">
+                  <Link href="/about" className="rounded-full border border-black/10 px-12 py-4 text-[10px] uppercase tracking-[0.4em] font-bold text-black hover:bg-black hover:text-white transition-all inline-block">
                     Our Story
-                  </button>
+                  </Link>
                 </div>
               </motion.div>
               <motion.div 
