@@ -216,9 +216,9 @@ export default function Home() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between mb-16">
               <h2 className="text-2xl font-black lg:text-3xl font-display tracking-tight">NEW ARRIVALS</h2>
-              <button className="text-[10px] uppercase tracking-[0.4em] font-bold text-black/30 hover:text-black transition-colors">
+              <Link href="/shop" className="text-[10px] uppercase tracking-[0.4em] font-bold text-black/30 hover:text-black transition-colors">
                 View All
-              </button>
+              </Link>
             </div>
             <div className="grid grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:grid-cols-4">
               <ProductCard name="Tape Details T" price={120} rating={4.5} image={product1} />
@@ -227,9 +227,9 @@ export default function Home() {
               <ProductCard name="Sleeve Striped T" price={130} originalPrice={160} rating={4.5} image={product4} />
             </div>
             <div className="mt-16 flex justify-center">
-              <button className="rounded-full border border-black/10 px-16 py-4 text-[10px] uppercase tracking-[0.4em] font-bold text-black hover:bg-black hover:text-white transition-all">
+              <Link href="/shop" className="rounded-full border border-black/10 px-16 py-4 text-[10px] uppercase tracking-[0.4em] font-bold text-black hover:bg-black hover:text-white transition-all">
                 View All
-              </button>
+              </Link>
             </div>
           </div>
         </section>
@@ -241,9 +241,9 @@ export default function Home() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between mb-16">
               <h2 className="text-2xl font-black lg:text-3xl font-display tracking-tight">TOP SELLING</h2>
-              <button className="text-[10px] uppercase tracking-[0.4em] font-bold text-black/30 hover:text-black transition-colors">
+              <Link href="/shop" className="text-[10px] uppercase tracking-[0.4em] font-bold text-black/30 hover:text-black transition-colors">
                 View All
-              </button>
+              </Link>
             </div>
             <div className="grid grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:grid-cols-4">
               <ProductCard name="Vertical Striped" price={212} originalPrice={232} rating={5.0} image={product5} />
@@ -252,9 +252,9 @@ export default function Home() {
               <ProductCard name="Faded Skinny" price={210} rating={4.5} image={product8} />
             </div>
             <div className="mt-16 flex justify-center">
-              <button className="rounded-full border border-black/10 px-16 py-4 text-[10px] uppercase tracking-[0.4em] font-bold text-black hover:bg-black hover:text-white transition-all">
+              <Link href="/shop" className="rounded-full border border-black/10 px-16 py-4 text-[10px] uppercase tracking-[0.4em] font-bold text-black hover:bg-black hover:text-white transition-all">
                 View All
-              </button>
+              </Link>
             </div>
           </div>
         </section>
