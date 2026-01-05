@@ -181,7 +181,6 @@ export default function ProductDetail() {
         <div className="mt-32 space-y-16">
           <h2 className="text-3xl font-black font-display tracking-tight text-center uppercase">YOU MIGHT ALSO LIKE</h2>
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-4">
-            {/* Using landing page cards component logic here or just a simplified version */}
             {[
               { name: "Polo Contrast Trims", price: 212, originalPrice: 242, rating: 4.0 },
               { name: "Gradient Graphic T", price: 145, rating: 3.5 },
@@ -190,7 +189,7 @@ export default function ProductDetail() {
             ].map((p) => (
               <div key={p.name} className="group cursor-pointer space-y-4">
                 <div className="relative aspect-square overflow-hidden rounded-xl bg-[#F0EEED] p-4">
-                  <Image src={heroImage} alt={p.name} fill className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
+                  <Image src={heroImage} alt={p.name} fill className="object-cover transition-all duration-500" />
                 </div>
                 <div className="space-y-1">
                   <h3 className="text-xs font-bold uppercase tracking-widest">{p.name}</h3>
