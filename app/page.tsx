@@ -198,6 +198,52 @@ export default function Home() {
           </div>
         </section>
 
+        {/* About Section */}
+        <section className="py-20 lg:py-32 bg-white">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+              <motion.div 
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1 }}
+                className="space-y-8"
+              >
+                <h2 className="text-3xl font-black lg:text-5xl font-display tracking-tight uppercase leading-tight">
+                  Crafting the Future of <br /> Minimalist Fashion
+                </h2>
+                <div className="space-y-6">
+                  <p className="text-[11px] uppercase tracking-[0.2em] leading-relaxed text-black/50">
+                    At djangoun.co, we believe that true style is found in simplicity. Our journey began with a single mission: to create a curated collection of essentials that transcend seasons and trends.
+                  </p>
+                  <p className="text-[11px] uppercase tracking-[0.2em] leading-relaxed text-black/50">
+                    Each piece is a testament to our commitment to quality, featuring premium fabrics and meticulous construction. We don't just sell clothes; we provide the building blocks for a modern, sophisticated wardrobe.
+                  </p>
+                </div>
+                <div className="pt-4">
+                  <button className="rounded-full border border-black/10 px-12 py-4 text-[10px] uppercase tracking-[0.4em] font-bold text-black hover:bg-black hover:text-white transition-all">
+                    Our Story
+                  </button>
+                </div>
+              </motion.div>
+              <motion.div 
+                initial={{ opacity: 0, scale: 1.05 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.2 }}
+                className="relative aspect-[4/5] rounded-3xl overflow-hidden bg-[#F0EEED]"
+              >
+                <Image
+                  src={product5}
+                  alt="About djangoun.co"
+                  fill
+                  className="object-cover"
+                />
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
         {/* Brands Banner */}
         <section id="brands" className="bg-white py-12 border-y border-black/5">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
