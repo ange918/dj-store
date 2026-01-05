@@ -205,15 +205,15 @@ export default function Home() {
         {/* Hero Section */}
         <section className="bg-[#F2F0F1] pt-10 lg:pt-0 overflow-hidden">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:flex lg:items-center lg:px-8">
-            <div className="py-12 lg:w-1/2 lg:py-24 z-10">
+            <div className="py-12 lg:w-2/3 lg:py-24 z-10">
               <motion.h1 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, ease: [0.19, 1, 0.22, 1] }}
-                className="text-4xl font-black leading-tight sm:text-5xl lg:text-6xl font-display tracking-tight"
+                className="text-4xl font-black leading-tight sm:text-5xl lg:text-7xl font-display tracking-tight"
               >
                 FIND CLOTHES<br />
-                <span className="text-3xl sm:text-4xl lg:text-5xl opacity-80">THAT MATCHES</span><br />
+                THAT MATCHES<br />
                 YOUR <WordFlip />
               </motion.h1>
               <motion.p 
@@ -249,7 +249,7 @@ export default function Home() {
                 </motion.div>
               </div>
             </div>
-            <div className="relative lg:w-1/2">
+            <div className="relative lg:w-1/3">
               <motion.div 
                 initial={{ opacity: 0, scale: 1.1 }}
                 animate={{ opacity: 1, scale: 1 }}
