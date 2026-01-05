@@ -52,7 +52,7 @@ const ProductCard = ({
     viewport={{ once: true }}
     className="group cursor-pointer"
   >
-    <div className="relative aspect-square overflow-hidden rounded-sm bg-[#F0EEED] p-4 grayscale hover:grayscale-0 transition-all duration-500">
+    <div className="relative aspect-square overflow-hidden rounded-sm bg-[#F0EEED] p-4 transition-all duration-500">
       <Image
         src={image}
         alt={name}
@@ -252,7 +252,7 @@ export default function Home() {
                 initial={{ opacity: 0, scale: 1.1 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 1.5, ease: [0.19, 1, 0.22, 1] }}
-                className="relative h-[450px] w-full sm:h-[650px] lg:h-[800px] grayscale hover:grayscale-0 transition-all duration-1000"
+                className="relative h-[450px] w-full sm:h-[650px] lg:h-[800px] transition-all duration-1000"
               >
                 <Image
                   src={heroImage}
@@ -279,7 +279,7 @@ export default function Home() {
         {/* Brands Banner */}
         <section id="brands" className="bg-white py-12 border-y border-black/5">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-wrap items-center justify-center gap-12 text-sm font-bold text-black/20 sm:gap-24 uppercase tracking-[0.5em] saturate-0 opacity-50">
+            <div className="flex flex-wrap items-center justify-center gap-12 text-sm font-bold text-black sm:gap-24 uppercase tracking-[0.5em] opacity-80">
               <span className="font-display">VERSACE</span>
               <span className="tracking-tighter">ZARA</span>
               <span className="tracking-tight">GUCCI</span>
