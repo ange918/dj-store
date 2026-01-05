@@ -5,6 +5,7 @@ import { useState } from "react";
 import { motion } from "motion/react";
 import Link from "next/link";
 import heroImage from "../../../attached_assets/generated_images/premium_fashion_lifestyle_hero_image.png";
+import { useCart } from "@/context/CartContext";
 
 const StarRating = ({ rating }: { rating: number }) => (
   <div className="flex gap-1 text-[#FFC633] text-sm">
@@ -36,6 +37,19 @@ export default function ProductDetail() {
   const [selectedSize, setSelectedSize] = useState("Large");
   const [selectedColor, setSelectedColor] = useState("Olive");
   const [quantity, setQuantity] = useState(1);
+  const { addToCart } = useCart();
+
+  const handleAddToCart = () => {
+    addToCart({
+      id: "product-1",
+      name: "ONE LIFE GRAPHIC T-SHIRT",
+      price: 260,
+      quantity: quantity,
+      image: heroImage as any,
+      size: selectedSize,
+      color: selectedColor
+    });
+  };
 
   return (
     <div className="min-h-screen bg-white selection:bg-black selection:text-white">
@@ -131,7 +145,10 @@ export default function ProductDetail() {
                 <span className="text-sm font-bold min-w-[24px] text-center">{quantity}</span>
                 <button onClick={() => setQuantity(quantity + 1)} className="text-xl font-bold hover:text-black/60 transition-colors">＋</button>
               </div>
-              <button className="flex-1 rounded-full bg-black py-4 text-[10px] font-bold uppercase tracking-[0.3em] text-white hover:bg-black/90 transition-all active:scale-[0.98]">
+              <button 
+                onClick={handleAddToCart}
+                className="flex-1 rounded-full bg-black py-4 text-[10px] font-bold uppercase tracking-[0.3em] text-white hover:bg-black/90 transition-all active:scale-[0.98]"
+              >
                 Add to Cart
               </button>
             </div>
